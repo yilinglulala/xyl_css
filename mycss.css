@@ -1,0 +1,141 @@
+/*
+开关
+使用：<input class="x-switch" type="checkbox">
+*/
+.x-switch{
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #dadada;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  transition: all .2s ease;
+
+}
+.x-switch:checked{
+  background-color: #86c0fa;
+}
+.x-switch::after{
+  content:'';
+  display:inline-block;
+  width:30px;
+  height:30px;
+  position:absolute;
+  top:-1px;
+  border:1px solid #ccc;
+  background:#fff;
+  border-radius: 30px;
+  
+}
+.x-switch:checked::after{
+  right:0;
+}
+/*
+TAB标签卡
+html：
+<section class="x-navs">
+    <label for="nav1">标签1</label>
+    <label for="nav2">标签2</label>
+    <label for="nav3">标签3</label>
+</section>
+<section class="x-contents" >
+    <input type="radio" id="nav1" name="nav" checked>
+    <div>我是内容1111</div>
+    <input type="radio" id="nav2" name="nav">
+    <div>我是内容22222</div>
+    <input type="radio" id="nav3" name="nav">
+    <div>我是内容333333</div>
+</section>
+*/
+.x-navs{
+  display:flex;
+}
+.x-navs label{
+  flex : 1;
+  text-align:center;
+  border:1px solid
+}
+.x-contents div{
+  display:none;
+}
+[name=nav]{
+  display:none
+}
+[name=nav]:checked+div{
+  display:block
+}
+/*
+表单验证样式
+利用pattern属性结合valid,invalid属性
+emoji图片网址：http://emojihomepage.com/   
+<section class="container">
+  <input type="text" name="tel" placeholder="请输入手机号码" pattern="^1[3456789]\d{9}$" required>
+  <input type="text" name="smscode" placeholder="请输入验证码" pattern="\d{4}" required><br>
+  <button type="submit"></button>
+</section>
+*/
+.x-input:valid{
+  outline:1px solid  #46b8bf
+}
+.x-input:invalid{
+  outline:1px solid red
+}
+.x-input:valid~button::after{
+  content:"验证通过😃";
+}
+.x-input:invalid~button::after{
+  content:"验证失败😐";
+}
+/*
+上传符号
+使用：<i class="x-upload"></i>
+*/
+i.x-upload{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  outline:10px solid #ccc;
+  outline-offset:-35px;
+  border:1px solid #ccc;
+}
+/*上拉标下拉标
+使用：
+<i class="icon-up">
+<i class="icon-down">
+*/
+.icon-up::before{
+    content: ''; 
+    position: absolute;
+    height: 3px;
+    border-left: 1px solid #bdbdbd; 
+    box-shadow: 1px 1px #bdbdbd,
+      2px 2px #bdbdbd, 
+      3px 3px #bdbdbd,
+      4px 4px #bdbdbd, 
+      5px 5px #bdbdbd, 
+      -1px 1px #bdbdbd, 
+      -2px 2px #bdbdbd,
+      -3px 3px #bdbdbd, 
+      -4px 4px #bdbdbd,
+      -5px 5px #bdbdbd;     
+}
+.icon-down::before{
+    content: ''; 
+    position: absolute; 
+    margin-top:5px;
+    height: 3px;
+    border-left: 1px solid #bdbdbd; 
+    box-shadow:
+      1px -1px #bdbdbd,
+      2px -2px #bdbdbd, 
+      3px -3px #bdbdbd,
+      4px -4px #bdbdbd, 
+      5px -5px #bdbdbd, 
+      -1px -1px #bdbdbd, 
+      -2px -2px #bdbdbd,
+      -3px -3px #bdbdbd, 
+      -4px -4px #bdbdbd,
+      -5px -5px #bdbdbd;     
+}
