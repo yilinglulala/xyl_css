@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xyl_css</title>
+	<link rel="stylesheet" type="text/css" href="xyl_css.css">
+</head>
+<body>
+	<div class="xyl_pub_container">
+		<input class="xyl-switch" type="checkbox">
+
+		<section class="xyl-navs">
+		    <label for="nav1">标签1</label>
+		    <label for="nav2">标签2</label>
+		    <label for="nav3">标签3</label>
+		</section>
+		<section class="xyl-nav-contents" >
+		    <input type="radio" id="nav1" name="nav" checked>
+		    <div>我是内容1111</div>
+		    <input type="radio" id="nav2" name="nav">
+		    <div>我是内容22222</div>
+		    <input type="radio" id="nav3" name="nav">
+		    <div>我是内容333333</div>
+		</section>
+
+		<section class="container">
+		  <input class="xyl-input" type="text" name="tel" 
+		  		placeholder="请输入手机号码" pattern="^1[3456789]\d{9}$" required>
+		  <input class="xyl-input" type="text" name="smscode" 
+		  		placeholder="请输入验证码" pattern="\d{4}" required><br>
+		  <button type="submit"></button>
+		</section>
+
+		<i class="xyl-upload"></i>
+		<i class="xyl-icon-up"></i>
+		<i class="xyl-icon-down"></i>
+	</div>
+	
+</body>
+</html>
