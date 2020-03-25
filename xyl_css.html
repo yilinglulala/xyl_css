@@ -3,10 +3,12 @@
 <head>
 	<title>xyl_css</title>
 	<link rel="stylesheet" type="text/css" href="xyl_css.css">
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 <body>
-	<div class="xyl_pub_container">
-		<input class="xyl-switch" type="checkbox">
+	<div class="xyl_pub_container pos-ab">
+		<div class="pos-re"><input  type="checkbox" hidden id="egg1"><label for="egg1" class="xyl-switch1"></label></div>
+		<div style="margin-top:50px"><input class="xyl-switch" type="checkbox" ></div>
 
 		<section class="xyl-navs">
 		    <label for="nav1">标签1</label>
@@ -33,7 +35,53 @@
 		<i class="xyl-upload"></i>
 		<i class="xyl-icon-up"></i>
 		<i class="xyl-icon-down"></i>
+		<img id="img" 
+			src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4gPHBhdGggZmlsbD0iI2Y1ODliMSIgZD0iTTM0MC40NyA0NjYuMzZjLTEuNDUgMC02Ljg5LjQ2LTkuMTguNDYtMTE2LjI1IDAtMjEwLjgyLTk0LjU3LTIxMC44Mi0yMTAuODJTMjE1LjA0IDQ1LjE4IDMzMS4yOSA0NS4xOGMyLjMyIDAgNy43LjQ2IDkuMTguNDYgNy4xMyAwIDEzLjMzLTUuMDMgMTQuNzUtMTIuMDcgMS40Ni03LjI1LTIuNTUtMTQuNDktOS40Ny0xNy4wOUMzMTYuNTggNS41NCAyODYuMzkgMCAyNTYgMCAxMTQuODQgMCAwIDExNC44NCAwIDI1NnMxMTQuODQgMjU2IDI1NiAyNTZjMzAuMjMgMCA2MC4yOC01LjQ5IDg5LjMyLTE2LjMyIDUuOTYtMi4wMiAxMC4yOC03LjY0IDEwLjI4LTE0LjI2IDAtOC4wOS02LjM5LTE1LjA2LTE1LjEzLTE1LjA2em0xNjIuOTktMjUyLjVsLTc2LjM4LTExLjEtMzQuMTYtNjkuMjFjLTEuODMtMy43LTUuMzgtNS41NS04LjkzLTUuNTVzLTcuMSAxLjg1LTguOTMgNS41NWwtMzQuMTYgNjkuMjEtNzYuMzggMTEuMWMtOC4xNyAxLjE4LTExLjQzIDExLjIyLTUuNTIgMTYuOTlsNTUuMjcgNTMuODctMTMuMDUgNzYuMDdjLTEuMTEgNi40NCA0LjAxIDExLjY2IDkuODEgMTEuNjYgMS41MyAwIDMuMTEtLjM2IDQuNjQtMS4xN0wzODQgMzM1LjM3bDY4LjMxIDM1LjkxYzEuNTMuOCAzLjExIDEuMTcgNC42NCAxLjE3IDUuOCAwIDEwLjkyLTUuMjMgOS44MS0xMS42NmwtMTMuMDUtNzYuMDcgNTUuMjctNTMuODdjNS45MS01Ljc3IDIuNjUtMTUuODEtNS41Mi0xNi45OXoiPjwvcGF0aD4gPC9zdmc+"
+			alt="">
 	</div>
+	<section>	
+		<div>
+		    <i class="pop" style="color:red">
+		      <span >我是一个气泡框哈哈哈</span>
+		    </i>
+		 </div>
+
+		<i class="pop" style="color:black">
+		  <span >气泡框</span>
+		</i>
+		<a href="http://js.jirengu.com/gaxicikefe/3/edit"></a>
+	</section>
 	
 </body>
+<script>
+	var img = document.querySelector('#img');
+		document.onmousemove = function (e) {
+			// img.style.opacity = 1
+			// var left = e.pageX + 'px';
+			// var top = e.pageY + 'px';
+			// img.style.left = left
+			// img.style.top = top
+			// a()
+
+		}
+		var a = debounce(function () { 
+			img.style.opacity = 0; 
+		}, 200)
+		function debounce(fn, wait) {
+			var timeout = null;
+			return function () {
+				if (timeout != null) { clearTimeout(timeout) }
+				timeout = setTimeout(function () {
+					fn.apply(this, arguments);
+				}, wait)
+			}
+		}
+	function flatten(arr) {
+	while(arr.some(item=>{console.log(Array.isArray(item)) ;return Array.isArray(item)})) {
+		arr = [].concat(...arr);console.log(...arr)
+	}
+	return arr;
+	}
+	flatten([1,[2,3,[4,5]]]);
+</script>
 </html>

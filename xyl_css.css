@@ -1,14 +1,78 @@
 /*公共样式
 */
+img {
+  position: absolute;
+  width: 50px;
+  transition: opacity .2s ease-in-out;
+  /* opacity: 0; */
+  animation: mymove 2s infinite;
+}
+@keyframes mymove {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(.2);
+  }
+}
 .xyl_pub_container{
   width: 80%;
   margin:0 auto;
 }
-
+.pos-ab{
+  position:absolute;
+}
+.pos-re{
+  position:relative;
+}
+.fs-0{
+  font-size:0;
+}
 /*
 开关
 使用：<input class="xyl-switch" type="checkbox">
 */
+.xyl-switch1{
+  background-color: #dadada;
+  width: 60px;
+  height: 30px;
+  display:inline-block;
+  position:relative;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  transition: all .2s ease;
+}
+:checked+.xyl-switch1{
+  background-color: #86c0fa;
+}
+.xyl-switch1::before{
+  content: '关';
+  line-height: 30px;
+  position: absolute;
+  left: 32px;
+}
+:checked+.xyl-switch1::before{
+  content:'开';
+  left: 10px;
+}
+.xyl-switch1::after{
+  content:'';
+  display:inline-block;
+  width:30px;
+  height:30px;
+  position:absolute;
+  /* border:1px solid #ccc; */
+  background:#fff;
+  border-radius: 30px;
+  box-sizing:border-box;
+}
+:checked+.xyl-switch1::after{
+  right:0;
+}
+/*  */
 .xyl-switch{
   position: relative;
   width: 60px;
@@ -23,6 +87,16 @@
 }
 .xyl-switch:checked{
   background-color: #86c0fa;
+}
+.xyl-switch::before{
+  content: '关';
+  line-height: 30px;
+  position: absolute;
+  left: 32px;
+}
+.xyl-switch:checked::before{
+  content:'开';
+  left: 10px;
 }
 .xyl-switch::after{
   content:'';
@@ -145,4 +219,33 @@ i.xyl-upload{
       -3px -3px #bdbdbd, 
       -4px -4px #bdbdbd,
       -5px -5px #bdbdbd;     
+}
+
+
+i{display:inline-block;font-style:normal}
+.pop{
+  position:relative;
+  min-width:5rem;
+  height:2rem;
+  color:black;
+  padding:0 .5rem;
+  margin-bottom:.5rem;
+  background:currentColor;
+  border-radius:.5rem;
+  text-align:center;
+}
+.pop:before{
+  content:'';
+  display:block;
+  width:0;height:0;
+  position:absolute;
+  border:.5rem solid transparent;
+  border-top-color:currentColor;
+  left:50%;
+  top:100%;
+  transform:translate(-50% ,0) ;
+}
+.pop span{
+  color:#fff;
+  line-height:2rem
 }
